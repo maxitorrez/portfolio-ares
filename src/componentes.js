@@ -36,8 +36,12 @@ export function projectCard(p, lang) {
   for (const k of REQUIRED) if (p[k] == null) throw new Error(`Proyecto "${p.id}": falta el campo ${k}`);
   const field = (key, body) => `<div class="field"><dt>${esc(t(key, lang))}</dt><dd>${body}</dd></div>`;
   const img = p.image ? `<img class="project-img" src="${esc(p.image)}" alt="" width="96" height="96" loading="lazy">` : '';
+  const s = p.screenshot;
+  if (s && !s.alt?.[lang]) throw new Error(`Proyecto "${p.id}": la captura no tiene alt en ${lang}`);
+  const shot = s ? `<figure class="project-shot"><img src="${esc(s.src)}" alt="${esc(s.alt[lang])}" width="${esc(s.width)}" height="${esc(s.height)}" loading="lazy" decoding="async"></figure>` : '';
   return `<article class="card project" id="p-${esc(p.id)}">
   <header class="project-head">${img}<div><h3>${esc(p.name)}</h3>${p.category ? `<p class="category">${esc(p.category[lang])}</p>` : ''}</div>${statusBadge(p.status, lang)}</header>
+  ${shot}
   <dl class="fields">
     ${field('f.problem', esc(p.problem[lang]))}
     ${field('f.goal', esc(p.goal[lang]))}
@@ -60,7 +64,7 @@ export function contactLinks(c, lang) {
 
 export function educationItem(e, lang) {
   const period = e.period && typeof e.period === 'object' ? e.period[lang] : e.period;
-  return `<li class="card edu"><h3>${esc(e.title[lang])}</h3>${e.institution ? `<p class="inst">${esc(e.institution)}</p>` : ''}${period ? `<p class="period">${esc(period)}</p>` : ''}</li>`;
+  return `<li class="card edu"><h3>${esc(e.title[lang])}</h3>${e.institution ? `<p class="inst">${esc(e.institution)}</p>` : ''}${period ? `<p class="period">${esc(period)}</p>` : ''}${e.note?.[lang] ? `<p class="note">${esc(e.note[lang])}</p>` : ''}</li>`;
 }
 
 export const section = (id, title, body, extra = '') =>

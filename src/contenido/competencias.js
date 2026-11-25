@@ -41,15 +41,17 @@ export const habilidades = {
   en: ['Analytical thinking', 'Problem solving', 'Research and continuous learning', 'Communication between technical and business teams', 'Organization and planning', 'Priority management', 'Teamwork', 'Autonomy', 'Accountability', 'Adaptability', 'Attention to detail', 'Results orientation', 'Understanding complex processes', 'Turning business needs into technology solutions'],
 };
 
-const pend = (name) => ({ name, confirmed: false, level: null });
 const ok = (name, level = null) => ({ name, confirmed: true, level });
+// Niveles declarados por el titular el 2026-11-25: intermedio en .NET, SQL, Node.js, JavaScript y C#; junior en el resto.
+const mid = (name) => ok(name, 'intermedio');
+const jr = (name) => ok(name, 'junior');
 
 export const stack = [
-  { id: 'lenguajes', title: { es: 'Lenguajes de programación', en: 'Programming languages' }, items: [ok('SQL'), ok('JavaScript'), ok('Node.js'), ok('Java'), ok('C#'), ok('HTML'), ok('CSS'), pend('TypeScript'), pend('Python'), pend('PHP')] },
-  { id: 'frontend', title: { es: 'Frontend', en: 'Frontend' }, items: [pend('React'), pend('Bootstrap')] },
-  { id: 'backend', title: { es: 'Backend', en: 'Backend' }, items: [pend('.NET')] },
-  { id: 'datos', title: { es: 'Bases de datos', en: 'Databases' }, items: [pend('MySQL'), pend('PostgreSQL'), pend('SQLite')] },
+  { id: 'lenguajes', title: { es: 'Lenguajes de programación', en: 'Programming languages' }, items: [mid('SQL'), mid('JavaScript'), mid('Node.js'), mid('C#'), jr('Java'), jr('TypeScript'), jr('Python'), jr('PHP'), jr('HTML'), jr('CSS')] },
+  { id: 'frontend', title: { es: 'Frontend', en: 'Frontend' }, items: [jr('React'), jr('Bootstrap')] },
+  { id: 'backend', title: { es: 'Backend', en: 'Backend' }, items: [mid('.NET')] },
+  { id: 'datos', title: { es: 'Bases de datos', en: 'Databases' }, items: [jr('MySQL'), jr('PostgreSQL'), jr('SQLite')] },
   { id: 'apis', title: { es: 'APIs e integraciones', en: 'APIs and integrations' }, items: [ok('APIs REST'), ok('JSON'), ok('XML'), ok('OAuth 2.0'), ok('Postman'), ok('Magento / Adobe Commerce')] },
-  { id: 'herramientas', title: { es: 'Herramientas de desarrollo', en: 'Development tools' }, items: [ok('Jira'), ok('Figma'), ok('Magento Admin'), pend('Git')] },
-  { id: 'devops', title: { es: 'Infraestructura y DevOps', en: 'Infrastructure and DevOps' }, items: [pend('Docker')] },
+  { id: 'herramientas', title: { es: 'Herramientas de desarrollo', en: 'Development tools' }, items: [ok('Jira'), ok('Figma'), ok('Magento Admin'), jr('Git')] },
+  { id: 'devops', title: { es: 'Infraestructura y DevOps', en: 'Infrastructure and DevOps' }, items: [jr('Docker')] },
 ];

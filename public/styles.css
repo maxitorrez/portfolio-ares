@@ -119,6 +119,7 @@ h1 { font: 700 clamp(38px, 6.5vw, 68px)/1.08 var(--head); margin: 0 0 22px; }
 /* Formación */
 .edu-list { list-style: none; padding: 0; margin: 0; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .edu h3 { font: 600 18px var(--head); margin: 0 0 6px; }
+.edu .note { margin: 6px 0 0; font-size: 14.5px; color: var(--text); }
 
 /* Skills y stack */
 .skills { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
@@ -137,6 +138,8 @@ h1 { font: 700 clamp(38px, 6.5vw, 68px)/1.08 var(--head); margin: 0 0 22px; }
 .project-head > div { flex: 1; min-width: 200px; }
 .project-head h3 { font: 700 21px var(--head); margin: 0; }
 .category { margin: 2px 0 0; font: 500 12.5px var(--mono); color: var(--muted); }
+.project-shot { margin: 0 0 20px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg-2); }
+.project-shot img { display: block; width: 100%; height: auto; }
 .project-img { width: 64px; height: 64px; object-fit: contain; background: var(--bg-2); border-radius: 12px; padding: 6px; }
 .badge { font: 500 12px var(--mono); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); white-space: nowrap; }
 .badge-laboral { color: var(--info); border-color: rgba(224, 178, 106, .35); }

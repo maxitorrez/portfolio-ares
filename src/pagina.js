@@ -12,7 +12,11 @@ export function renderPage(c, lang) {
   const base = lang === 'es' ? '' : '../';
   const other = lang === 'es' ? 'en' : 'es';
   const url = (l) => `${p.site}${PATHS[l]}`;
-  const withBase = (list) => list.map((x) => (x.image ? { ...x, image: base + x.image } : x));
+  const withBase = (list) => list.map((x) => ({
+    ...x,
+    ...(x.image ? { image: base + x.image } : {}),
+    ...(x.screenshot ? { screenshot: { ...x.screenshot, src: base + x.screenshot.src } } : {}),
+  }));
 
   const jsonLd = {
     '@context': 'https://schema.org', '@type': 'Person', name: p.name, url: url(lang),

@@ -43,7 +43,7 @@ export const experiencia = [
 ];
 
 export const formacion = [
-  { title: { es: 'Analista Universitario en Sistemas', en: 'University Systems Analyst' }, institution: 'Universidad de Palermo', period: { es: 'Carrera de 3 años', en: '3-year degree' } },
+  { title: { es: 'Analista Superior en Sistemas', en: 'Higher Systems Analyst' }, institution: 'Universidad de Palermo', period: { es: 'Carrera de 3 años · Finalizada', en: '3-year degree · Completed' }, note: { es: 'Promedio: 8,52', en: 'GPA: 8.52 / 10' } },
   { title: { es: 'Formación en Sistemas', en: 'Systems training' }, institution: 'ORT', period: '' },
   { title: { es: 'Liderazgo: Gerencia en Tecnología / Ingeniería', en: 'Leadership: Technology / Engineering Management' }, institution: '', period: '' },
 ];

@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/index.html"
+        ],
+        "createdAt": "2026-11-25T23:42:42.580Z",
+        "reason": "Ares: .card tiene padding clamp(18px, 2.6vw, 28px) en public/styles.css:100; capturas de Chromium (1280 y 390 px) muestran el texto con margen interno, el detector no lo ve"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/en/index.html"
+        ],
+        "createdAt": "2026-11-25T23:42:42.687Z",
+        "reason": "Ares: .card tiene padding clamp(18px, 2.6vw, 28px) en public/styles.css:100; capturas de Chromium (1280 y 390 px) muestran el texto con margen interno, el detector no lo ve"
+      }
+    ]
+  }
+}

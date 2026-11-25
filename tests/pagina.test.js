@@ -67,6 +67,22 @@ test('PF-07 honestidad: no aparecen tecnologías sin confirmar', () => {
   }
 });
 
+test('PF-20 stack: todas confirmadas; niveles declarados por el titular (2026-11-25)', () => {
+  const nivel = Object.fromEntries(contenido.stack.flatMap((g) => g.items.map((t) => [t.name, t.level])));
+  for (const g of contenido.stack) for (const t of g.items) assert.ok(t.confirmed, `${t.name} sin confirmar`);
+  for (const n of ['.NET', 'SQL', 'Node.js', 'JavaScript', 'C#']) assert.equal(nivel[n], 'intermedio', n);
+  for (const n of ['Java', 'HTML', 'CSS', 'TypeScript', 'Python', 'PHP', 'React', 'Bootstrap', 'MySQL', 'PostgreSQL', 'SQLite', 'Git', 'Docker']) assert.equal(nivel[n], 'junior', n);
+});
+
+test('PF-21 proyectos nuevos con captura; la página en inglés la resuelve desde la raíz', () => {
+  const ids = contenido.personales.map((p) => p.id);
+  for (const id of ['hades', 'margen360', 'afinados']) {
+    assert.ok(ids.includes(id), `falta el proyecto ${id}`);
+    assert.ok(contenido.personales.find((p) => p.id === id).screenshot, `${id} sin captura`);
+  }
+  assert.match(renderPage(contenido, 'en'), /<img src="\.\.\/assets\/capturas\/hades\.jpg"/);
+});
+
 test('PF-08 confidencialidad: el contenido no contiene URLs internas ni credenciales', () => {
   const texto = JSON.stringify(contenido);
   assert.doesNotMatch(texto, /(api[_-]?key|password|token|secret|localhost|192\.168|\.internal)/i);

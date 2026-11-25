@@ -92,3 +92,24 @@ test('PF-06b educationItem acepta un período bilingüe', () => {
   assert.match(educationItem(e, 'en'), /<p class="period">3-year degree<\/p>/);
   assert.doesNotMatch(educationItem(e, 'es'), /object/);
 });
+
+// PF-19 — formación: nota bilingüe opcional (promedio)
+test('PF-19 educationItem muestra la nota cuando existe y la omite si no', () => {
+  const e = { title: { es: 'A', en: 'A' }, institution: 'UP', period: '', note: { es: 'Promedio: 8,52', en: 'GPA: 8.52' } };
+  assert.match(educationItem(e, 'es'), /<p class="note">Promedio: 8,52<\/p>/);
+  assert.match(educationItem(e, 'en'), /<p class="note">GPA: 8\.52<\/p>/);
+  assert.doesNotMatch(educationItem({ ...e, note: undefined }, 'es'), /class="note"/);
+});
+
+// PF-18 — proyectos: captura de cómo quedó, con texto alternativo bilingüe
+test('PF-18 projectCard muestra la captura con alt del idioma, ancho y alto', () => {
+  const p = { ...proyecto, screenshot: { src: 'assets/capturas/p.jpg', width: 1280, height: 800, alt: { es: 'Pantalla de P', en: 'P screen' } } };
+  const out = projectCard(p, 'en');
+  assert.match(out, /<figure class="project-shot"><img src="assets\/capturas\/p\.jpg" alt="P screen" width="1280" height="800" loading="lazy" decoding="async"><\/figure>/);
+  assert.doesNotMatch(projectCard(proyecto, 'es'), /project-shot/);
+});
+
+test('PF-18b projectCard rechaza una captura sin texto alternativo', () => {
+  const p = { ...proyecto, screenshot: { src: 'x.jpg', width: 1, height: 1, alt: { es: '', en: 'x' } } };
+  assert.throws(() => projectCard(p, 'es'), /alt/);
+});
