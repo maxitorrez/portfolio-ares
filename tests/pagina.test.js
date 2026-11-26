@@ -72,6 +72,22 @@ test('PF-20 stack: todas confirmadas; niveles declarados por el titular (2026-11
   for (const g of contenido.stack) for (const t of g.items) assert.ok(t.confirmed, `${t.name} sin confirmar`);
   for (const n of ['.NET', 'SQL', 'Node.js', 'JavaScript', 'C#']) assert.equal(nivel[n], 'intermedio', n);
   for (const n of ['Java', 'HTML', 'CSS', 'TypeScript', 'Python', 'PHP', 'React', 'Bootstrap', 'MySQL', 'PostgreSQL', 'SQLite', 'Git', 'Docker']) assert.equal(nivel[n], 'junior', n);
+  for (const n of ['APIs REST', 'JSON', 'XML', 'OAuth 2.0', 'Postman', 'Magento / Adobe Commerce', 'Jira', 'Figma', 'Magento Admin']) assert.equal(nivel[n], 'intermedio', n);
+});
+
+test('PF-22 formación sin ORT; Liderazgo emitido por Udemy', () => {
+  assert.ok(!contenido.formacion.some((e) => e.institution === 'ORT'), 'ORT sigue en formación');
+  assert.equal(contenido.formacion.find((e) => /Liderazgo/.test(e.title.es)).institution, 'Udemy');
+});
+
+test('PF-23 los casos laborales indican que son en Movistar', () => {
+  for (const p of contenido.proyectos) for (const l of ['es', 'en']) assert.match(p.category[l], /^Movistar SA · /, `${p.id} ${l}`);
+});
+
+test('PF-24 tipografía de lectura: Commissioner en lugar de Inter', () => {
+  const html = renderPage(contenido, 'es');
+  assert.match(html, /family=Commissioner:wght@400;500;600/);
+  assert.doesNotMatch(html, /family=Inter/);
 });
 
 test('PF-21 proyectos nuevos con captura; la página en inglés la resuelve desde la raíz', () => {

@@ -4,7 +4,7 @@
 export const proyectos = [
   {
     id: 'checkout-b2b', name: 'Checkout y medios de pago en e-commerce B2B', status: 'laboral',
-    category: { es: 'E-commerce B2B · Checkout y medios de pago', en: 'B2B e-commerce · Checkout and payments' },
+    category: { es: 'Movistar SA · E-commerce B2B · Checkout y medios de pago', en: 'Movistar SA · B2B e-commerce · Checkout and payments' },
     problem: { es: 'El proceso de compra B2B combina reglas comerciales, medios de pago y servicios externos; un cambio en cualquiera de ellos puede cortar el flujo de pedidos.', en: 'B2B purchasing combines commercial rules, payment methods and external services; a change in any of them can break the order flow.' },
     goal: { es: 'Que cada cambio en el checkout llegue a producción con requerimientos claros y validado de punta a punta.', en: 'Make every checkout change reach production with clear requirements and end-to-end validation.' },
     solution: { es: 'Relevamiento con negocio, documentación del flujo y sus reglas, criterios de aceptación verificables y validación funcional y de integración antes de cada entrega.', en: 'Requirements gathering with the business, documentation of the flow and its rules, verifiable acceptance criteria and functional and integration validation before each release.' },
@@ -15,7 +15,7 @@ export const proyectos = [
   },
   {
     id: 'integraciones', name: 'Integraciones de APIs y servicios', status: 'laboral',
-    category: { es: 'Integraciones · APIs y servicios', en: 'Integrations · APIs and services' },
+    category: { es: 'Movistar SA · Integraciones · APIs y servicios', en: 'Movistar SA · Integrations · APIs and services' },
     problem: { es: 'Plataformas y servicios que intercambian información (pedidos, validaciones, consultas) necesitan contratos claros y un análisis rápido cuando algo falla.', en: 'Platforms and services exchanging data (orders, validations, lookups) need clear contracts and fast analysis when something fails.' },
     goal: { es: 'Integraciones documentadas, verificables y con errores diagnosticables.', en: 'Integrations that are documented, verifiable and diagnosable.' },
     solution: { es: 'Documentación de APIs y procedimientos, validación de servicios con Postman (JSON, XML, OAuth 2.0), consultas SQL para contrastar datos y análisis de logs y comportamiento de los servicios.', en: 'API and procedure documentation, service validation with Postman (JSON, XML, OAuth 2.0), SQL queries to cross-check data and analysis of logs and service behavior.' },
@@ -26,7 +26,7 @@ export const proyectos = [
   },
   {
     id: 'qa-regresion', name: 'Calidad y regresión de una plataforma digital', status: 'laboral',
-    category: { es: 'Testing y control de calidad', en: 'Testing and quality control' },
+    category: { es: 'Movistar SA · Testing y control de calidad', en: 'Movistar SA · Testing and quality control' },
     problem: { es: 'Las entregas frecuentes de una plataforma en producción pueden romper funcionalidades que ya andaban.', en: 'Frequent releases on a live platform can break features that already worked.' },
     goal: { es: 'Detectar regresiones antes de producción y dar trazabilidad a cada incidencia.', en: 'Catch regressions before production and keep every issue traceable.' },
     solution: { es: 'Pruebas funcionales, de integración y de regresión por entrega, con seguimiento de incidencias en Jira dentro de sprints Scrum.', en: 'Functional, integration and regression testing per release, with issue tracking in Jira within Scrum sprints.' },
@@ -37,7 +37,7 @@ export const proyectos = [
   },
   {
     id: 'rpa', name: 'Automatización de procesos (RPA)', status: 'laboral',
-    category: { es: 'Automatización de procesos', en: 'Process automation' },
+    category: { es: 'Movistar SA · Automatización de procesos', en: 'Movistar SA · Process automation' },
     problem: { es: 'Tareas operativas repetitivas consumen tiempo y son propensas a errores manuales.', en: 'Repetitive operational tasks take time and are prone to manual errors.' },
     goal: { es: 'Automatizar procesos definidos manteniendo control y trazabilidad.', en: 'Automate defined processes while keeping control and traceability.' },
     solution: { es: 'Modelado del proceso actual, definición de reglas y excepciones, y validación del proceso automatizado.', en: 'Modeling the current process, defining rules and exceptions, and validating the automated process.' },

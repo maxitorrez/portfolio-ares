@@ -1,4 +1,4 @@
-/* Identidad Ares: oscuro cálido, bronce y carmesí, títulos en Cinzel; Inter para leer y JetBrains Mono para etiquetas. */
+/* Identidad Ares: oscuro cálido, bronce y carmesí, títulos en Cinzel; Commissioner (diseño griego, cálido) para leer y JetBrains Mono para etiquetas. */
 :root {
   --bg: #0f0c0a;
   --bg-2: #1a1410;
@@ -20,7 +20,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
-  margin: 0; color: var(--text); font: 16px/1.65 Inter, system-ui, sans-serif;
+  margin: 0; color: var(--text); font: 16px/1.6 Commissioner, system-ui, sans-serif;
   background-color: var(--bg);
   background-image:
     radial-gradient(1100px 600px at 80% -10%, rgba(179, 48, 42, .16), transparent 60%),

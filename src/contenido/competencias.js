@@ -42,7 +42,8 @@ export const habilidades = {
 };
 
 const ok = (name, level = null) => ({ name, confirmed: true, level });
-// Niveles declarados por el titular el 2026-11-25: intermedio en .NET, SQL, Node.js, JavaScript y C#; junior en el resto.
+// Niveles declarados por el titular el 2026-11-25: intermedio en .NET, SQL, Node.js, JavaScript, C# y en las herramientas
+// (APIs, Postman, Magento, Jira, Figma); junior en el resto de las tecnologías.
 const mid = (name) => ok(name, 'intermedio');
 const jr = (name) => ok(name, 'junior');
 
@@ -51,7 +52,7 @@ export const stack = [
   { id: 'frontend', title: { es: 'Frontend', en: 'Frontend' }, items: [jr('React'), jr('Bootstrap')] },
   { id: 'backend', title: { es: 'Backend', en: 'Backend' }, items: [mid('.NET')] },
   { id: 'datos', title: { es: 'Bases de datos', en: 'Databases' }, items: [jr('MySQL'), jr('PostgreSQL'), jr('SQLite')] },
-  { id: 'apis', title: { es: 'APIs e integraciones', en: 'APIs and integrations' }, items: [ok('APIs REST'), ok('JSON'), ok('XML'), ok('OAuth 2.0'), ok('Postman'), ok('Magento / Adobe Commerce')] },
-  { id: 'herramientas', title: { es: 'Herramientas de desarrollo', en: 'Development tools' }, items: [ok('Jira'), ok('Figma'), ok('Magento Admin'), jr('Git')] },
+  { id: 'apis', title: { es: 'APIs e integraciones', en: 'APIs and integrations' }, items: [mid('APIs REST'), mid('JSON'), mid('XML'), mid('OAuth 2.0'), mid('Postman'), mid('Magento / Adobe Commerce')] },
+  { id: 'herramientas', title: { es: 'Herramientas de desarrollo', en: 'Development tools' }, items: [mid('Jira'), mid('Figma'), mid('Magento Admin'), jr('Git')] },
   { id: 'devops', title: { es: 'Infraestructura y DevOps', en: 'Infrastructure and DevOps' }, items: [jr('Docker')] },
 ];
